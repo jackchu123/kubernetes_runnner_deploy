@@ -49,11 +49,6 @@ kubectl get pods -n namespace_name -o wide
 # 内部Gitlab域名和IP地址
 CI_SERVER_URL: "http://gitlab.cn/ci"
 CLONE_URL: "http://172.16.0.1"
-METRICS_SERVER: "0.0.0.0:9100"
-RUNNER_REQUEST_CONCURRENCY: "4"
-RUNNER_EXECUTOR: "kubernetes"
-KUBERNETES_NAMESPACE: "innovation-lab"
-KUBERNETES_PRIVILEGED: "true"
 # namesapce资源限制
 KUBERNETES_CPU_LIMIT: "1"
 KUBERNETES_MEMORY_LIMIT: "1Gi"
