@@ -9,6 +9,8 @@
 # 使用方法
 - 修改`check.conf`配置文件
 
+> 第一次修改请注意内部Gitlab地址和资源配置，详细请看其它
+
 ```
 # 根据项目需求进行编辑
 # The Project runner namespace
@@ -42,3 +44,26 @@ kubectl get pods -n namespace_name -o wide
 
 # 其它
 - Kubernetes版本升级之后，API接口可能会改变，执行报错之后根据提示修改接口版本即可
+- 第一次修改请注意，需要将configmap.yaml中关于内部Gitlab地址修改
+```
+# 内部Gitlab域名和IP地址
+CI_SERVER_URL: "http://gitlab.cn/ci"
+CLONE_URL: "http://172.16.0.1"
+METRICS_SERVER: "0.0.0.0:9100"
+RUNNER_REQUEST_CONCURRENCY: "4"
+RUNNER_EXECUTOR: "kubernetes"
+KUBERNETES_NAMESPACE: "innovation-lab"
+KUBERNETES_PRIVILEGED: "true"
+# namesapce资源限制
+KUBERNETES_CPU_LIMIT: "1"
+KUBERNETES_MEMORY_LIMIT: "1Gi"
+KUBERNETES_SERVICE_CPU_LIMIT: "1"
+KUBERNETES_SERVICE_MEMORY_LIMIT: "1Gi"
+KUBERNETES_HELPER_CPU_LIMIT: "500m"
+KUBERNETES_HELPER_MEMORY_LIMIT: "100Mi"
+KUBERNETES_PULL_POLICY: "if-not-present"
+KUBERNETES_TERMINATIONGRACEPERIODSECONDS: "10"
+KUBERNETES_POLL_INTERVAL: "5"
+KUBERNETES_POLL_TIMEOUT: "360"
+KUBERNETES_IMAGE: "golang:1.11.2"
+```
