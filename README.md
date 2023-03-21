@@ -13,11 +13,15 @@
 
 ```
 # 根据项目需求进行编辑
+# 请注意，namespace不能使用大写
 # The Project runner namespace
 namespace=moreink-frontend
 
 # The Runner name
 runner_name=runner-moreink-frontend
+
+# The Tag name
+tag_name=shardjava
 
 # The Project token
 token=rEj4f7feAdDvvDNevzWw
