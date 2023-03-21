@@ -41,7 +41,7 @@ data:
     trap 'unregister' EXIT HUP INT QUIT PIPE TERM
     echo "172.16.0.2 git.hyperchain.cn" >> /etc/hosts
     echo "Registering runner ${RUNNER_NAME} ..."
-    /usr/bin/gitlab-ci-multi-runner register -r ${GITLAB_CI_TOKEN}
+    /usr/bin/gitlab-ci-multi-runner register -r ${GITLAB_CI_TOKEN} --tag-list RUNNERTAG
     sed -i 's/^concurrent.*/concurrent = '"${RUNNER_REQUEST_CONCURRENCY}"'/' /etc/gitlab-runner/config.toml
     echo "Starting runner ${RUNNER_NAME} ..."
     /usr/bin/gitlab-ci-multi-runner run -n ${RUNNER_NAME} &
