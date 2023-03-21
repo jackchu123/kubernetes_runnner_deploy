@@ -19,3 +19,6 @@ sed -i "s/innovation-lab/$namespace/g" `grep innovation-lab -rl --include="*.yam
 
 #runner name change
 sed -i "s/fatechain/$runner_name/g" `grep fatechain -rl --include="*.yaml" ./$namespace/`
+
+#runner tag change
+sed -i "s/RUNNERTAG/$tag_name/g" `grep fatechain -rl --include="*.yaml" ./$namespace/`
